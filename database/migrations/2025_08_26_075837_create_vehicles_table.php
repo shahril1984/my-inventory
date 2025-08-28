@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             // $table->foreignid('user_id')->constrained('users');
             $table->string('car_model');
-            $table->integer('quantities');
-            $table->integer('no_plate');
+            $table->integer('quantities')->nullable();
+            $table->string('no_plate')->nullable();
             $table->timestamps();
             
         });

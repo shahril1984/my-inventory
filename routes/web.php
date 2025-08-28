@@ -22,8 +22,11 @@ Route::get('/inventories/{inventory}/destroy', [InventoryController::class, 'des
 
 
 Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles.index');
-Route::get('/vehicles/create', [VehicleController::class, 'create']);
-Route::post('/vehicles/create', [VechicleController::class, 'store']);
-Route::get('/vehicles/{vehicle}', [VechicleController::class, 'show']);
+Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('vehicles.create');
+Route::post('/vehicles/create', [VehicleController::class, 'store'])->name('vehicles.show');
+Route::get('/vehicles/{vehicle}', [VehicleController::class, 'show'])->name('inventories.show');
+Route::get('/vehicles/{vehicle}/edit', [VehicleController::class, 'edit'])->name('vehicles.edit');
+Route::post('/vehicles/{vehicle}/edit', [VehicleController::class, 'update'])->name('vehicles.update');
+Route::get('/vehicles/{vehicle}/destroy', [VehicleController::class, 'destroy'])->name('vehicles.destroy');
 
 
